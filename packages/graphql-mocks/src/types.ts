@@ -9,6 +9,7 @@ import { PackOptions } from './pack/types';
 type ManagedContext = {
   [key: string]: any;
   pack?: PackOptions;
+  pipelineResult?: any;
 };
 
 export type ObjectField = GraphQLField<any, any>;
