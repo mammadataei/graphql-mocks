@@ -16,6 +16,7 @@ export class GraphQLHandler {
   protected graphqlSchema: GraphQLSchema;
   protected initialContext: GraphQLArgs['contextValue'];
   protected initialResolverMap: ResolverMap;
+  protected logging: boolean;
 
   constructor(options: CreateGraphQLHandlerOptions) {
     const graphqlSchema = createSchema(options.dependencies?.graphqlSchema);
@@ -35,6 +36,7 @@ export class GraphQLHandler {
     this.initialResolverMap = options.resolverMap ?? {};
     this.state = options.state ?? {};
     this.middlewares = options.middlewares ?? [];
+    this.logging = options.logging ?? false;
   }
 
   applyMiddlewares(middlewares: ResolverMapMiddleware[], options?: { reset?: boolean }): void {

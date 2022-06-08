@@ -7,4 +7,5 @@ export type CreateGraphQLHandlerOptions = Partial<PackOptions> & {
   resolverMap?: ResolverMap;
   middlewares?: ResolverMapMiddleware[];
   dependencies: PackOptions['dependencies'] & { graphqlSchema: GraphQLSchema | DocumentNode | string };
+  logging: boolean;
 };
